@@ -308,7 +308,8 @@ void drawGraph ( HDC hdc, double** matrix )
 
                                 }
                                 else {
-                                    //S..t starts here:
+
+                                    LineTo( hdc, nx[j], ny[j] );
                                     if ( matrix[j][i] == 1 ) {
 
                                         if ( i - j < 0 ) {
@@ -372,12 +373,12 @@ void drawGraph ( HDC hdc, double** matrix )
                                             }
 
                                         }
-                                        LineTo( hdc, nx[j], ny[j] );
                                     }
                                 }
                             }
                         }
                         else {
+                            LineTo( hdc, nx[j], ny[j] );
 
                             if ( matrix[j][i] == 1 ) {
                                 if ( i - j > 0 ) {
@@ -388,7 +389,6 @@ void drawGraph ( HDC hdc, double** matrix )
                                     pt[2].x = nx[j];
                                     pt[2].y = ny[j];
 
-                                    LineTo( hdc, nx[j], ny[j] );
                                     if ( nx[i] == nx[j] && ny[i] > ny[j] ) {
                                         arrow(90, nx[j], ny[j]+dy);
                                         pt[1].x = nx[i]-oneLen/4;
@@ -417,7 +417,6 @@ void drawGraph ( HDC hdc, double** matrix )
                                 }
                             }
                             else {
-                                LineTo( hdc, nx[j], ny[j] );
                                 if ( nx[i] == nx[j] && ny[i] > ny[j] ) {
                                     arrow(90, nx[j], ny[j]+dy);
                                 }
