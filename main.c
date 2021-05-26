@@ -601,6 +601,9 @@ DWORD WINAPI secondfun (LPVOID lpParam)                                         
     }
     printf("\nBFS matrix:\n");
     printMatrix ( bfs, numb, numb );
+    pausa( lpParam );
+    printf("\nSwitch to bfs graph\n");
+    check = 2;
     printf("\nSwitch to new numbers\n");
     pausa( lpParam );
     humsSwitch = 1;
